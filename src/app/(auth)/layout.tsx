@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { ThemeModeToggle } from "@/components/organisms/theme-mode-toggle";
-import BrandSloganStack from "@/components/atoms/brand/brand-slogan-stack";
+import { ThemeModeToggle } from "@/next-shared/components/organisms/theme-mode-toggle";
+import BrandSloganStack from "@/next-shared/components/atoms/brand/brand-slogan-stack";
 import Link from "next/link";
 
 export const metadata: Metadata = {

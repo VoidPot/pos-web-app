@@ -1,10 +1,7 @@
-import { ThemeModeToggle } from "@/components/organisms/theme-mode-toggle";
-import { Button } from "@/components/ui/button";
-import GoogleAuth from "@/components/molecules/GoogleAuth";
 import Link from "next/link";
 
-import BrandSloganStack from "@/components/atoms/brand/brand-slogan-stack";
-import { Anchor } from "@/components/ui/anchor";
+import BrandSloganStack from "@/next-shared/components/atoms/brand/brand-slogan-stack";
+import { Anchor } from "@/next-shared/components/ui/anchor";
 
 export default function Home() {
   return (
@@ -14,7 +11,6 @@ export default function Home() {
       </h1>
       <h3 className="md:text-3xl text-2xl font-bold">Join today.</h3>
       <div className="flex flex-col w-full mb-2 gap-3 md:max-w-xs">
-        <GoogleAuth mode="signUp" />
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
             <span className="w-full border-t" />

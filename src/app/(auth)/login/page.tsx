@@ -1,25 +1,13 @@
-import { ThemeModeToggle } from "@/components/organisms/theme-mode-toggle";
-import { Button } from "@/components/ui/button";
-import GoogleAuth from "@/components/molecules/GoogleAuth";
-import BrandSloganStack from "@/components/atoms/brand/brand-slogan-stack";
+import { Button } from "@/next-shared/components/ui/button";
 import Link from "next/link";
-import { Input } from "@/components/ui/input";
-import { Anchor } from "@/components/ui/anchor";
+import { Anchor } from "@/next-shared/components/ui/anchor";
+import { Input } from "@/next-shared/components/ui/input";
 
 export default function Login() {
   return (
     <>
       <h3 className="md:text-3xl text-2xl font-bold">Sign in.</h3>
       <div className="flex flex-col w-full mb-2 gap-3 md:max-w-xs">
-        <GoogleAuth mode="signIn" />
-        <div className="relative">
-          <div className="absolute inset-0 flex items-center">
-            <span className="w-full border-t" />
-          </div>
-          <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-background px-2 text-muted-foreground">or</span>
-          </div>
-        </div>
         <Input
           placeholder="Email, phone or username"
           autoComplete="username"

@@ -1,17 +1,16 @@
-import BrandSideBySide from "@/components/atoms/brand/side-by-side";
-import BrandStack from "@/components/atoms/brand/brand-stack";
-import { CreateAccount } from "@/components/organisms/create-account-card";
-import { LoginForm } from "@/components/organisms/login-form";
-import { ProfileForm } from "@/components/organisms/profile-form";
-import { ThemeModeToggle } from "@/components/organisms/theme-mode-toggle";
-import { LoginCard } from "@/components/templates/login-card";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
+import BrandSideBySide from "@/next-shared/components/atoms/brand/side-by-side";
+import BrandStack from "@/next-shared/components/atoms/brand/brand-stack";
+import { CreateAccount } from "@/next-shared/components/organisms/create-account-card";
+import { LoginForm } from "@/next-shared/components/organisms/login-form";
+import { ProfileForm } from "@/next-shared/components/organisms/profile-form";
+import { ThemeModeToggle } from "@/next-shared/components/organisms/theme-mode-toggle";
+import { LoginCard } from "@/next-shared/components/templates/login-card";
+import { Button } from "@/next-shared/components/ui/button";
+import { Separator } from "@/next-shared/components/ui/separator";
 import { IoShareSocialSharp } from "react-icons/io5";
 import { PiHandshakeFill } from "react-icons/pi";
 import { RiSlideshow3Fill } from "react-icons/ri";
-import GoogleAuth from "@/components/molecules/GoogleAuth";
-import BrandSloganStack from "@/components/atoms/brand/brand-slogan-stack";
+import BrandSloganStack from "@/next-shared/components/atoms/brand/brand-slogan-stack";
 
 export default function Home() {
   return (
@@ -22,7 +21,6 @@ export default function Home() {
             <BrandStack className="h-6" />
           </span>
         </div>
-        {/* <GoogleAuth /> */}
 
         <div className="flex w-auto gap-2">
           <ThemeModeToggle />

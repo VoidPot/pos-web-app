@@ -1,10 +1,9 @@
-import { ThemeModeToggle } from "@/components/organisms/theme-mode-toggle";
-import { Button } from "@/components/ui/button";
-import GoogleAuth from "@/components/molecules/GoogleAuth";
-import BrandSloganStack from "@/components/atoms/brand/brand-slogan-stack";
+import { ThemeModeToggle } from "@/next-shared/components/organisms/theme-mode-toggle";
+import { Button } from "@/next-shared/components/ui/button";
+import BrandSloganStack from "@/next-shared/components/atoms/brand/brand-slogan-stack";
 import Link from "next/link";
-import { Input } from "@/components/ui/input";
-import { Anchor } from "@/components/ui/anchor";
+import { Input } from "@/next-shared/components/ui/input";
+import { Anchor } from "@/next-shared/components/ui/anchor";
 
 export default function Login() {
   return (

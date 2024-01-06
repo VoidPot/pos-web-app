@@ -5,12 +5,12 @@
   "tsx": true,
   "tailwind": {
     "config": "tailwind.config.js",
-    "css": "src/styles/globals.css",
+    "css": "src/next-shared/styles/globals.css",
     "baseColor": "gray",
     "cssVariables": true
   },
   "aliases": {
-    "components": "@/components",
-    "utils": "@/lib/utils"
+    "components": "@/next-shared/components",
+    "utils": "@/next-shared/lib/utils"
   }
 }

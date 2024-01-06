@@ -1,12 +1,7 @@
-import { ThemeModeToggle } from "@/components/organisms/theme-mode-toggle";
-import { Button } from "@/components/ui/button";
-import GoogleAuth from "@/components/molecules/GoogleAuth";
 import Link from "next/link";
-
-import BrandSloganStack from "@/components/atoms/brand/brand-slogan-stack";
-import { Anchor } from "@/components/ui/anchor";
-import { LoginForm } from "@/components/organisms/login-form";
-import { RegisterForm } from "@/components/forms/register-form";
+import { Anchor } from "@/next-shared/components/ui/anchor";
+import { LoginForm } from "@/next-shared/components/organisms/login-form";
+import { RegisterForm } from "@/next-shared/components/forms/register-form";
 
 export default function Home() {
   return (
@@ -22,18 +17,6 @@ export default function Home() {
         </h3>
         <RegisterForm />
         <div className="flex flex-col w-full mb-2 gap-3 md:max-w-xs">
-          <GoogleAuth mode="signUp" />
-          <div className="relative">
-            <div className="absolute inset-0 flex items-center">
-              <span className="w-full border-t" />
-            </div>
-            <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-background px-2 text-muted-foreground">
-                or
-              </span>
-            </div>
-          </div>
-
           <Link href={"/signup"} legacyBehavior>
             <Anchor>Create Account</Anchor>
           </Link>

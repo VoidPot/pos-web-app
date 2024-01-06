@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/next-shared/components/theme-provider";
 
 import { GoogleOAuthProvider } from "@react-oauth/google";
-import "../styles/globals.css";
-import { makeClient } from "@/lib/apollo-provider";
+import "../next-shared/styles/globals.css";
+import { makeClient } from "@/next-shared/lib/apollo-provider";
 import { ApolloNextAppProvider } from "@apollo/experimental-nextjs-app-support/ssr";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "@/next-shared/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "SocLif",
