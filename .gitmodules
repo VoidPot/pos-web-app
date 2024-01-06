@@ -1,0 +1,3 @@
+[submodule "src/next-shared"]
+	path = src/next-shared
+	url = git@github.com:VoidPot/next-shared.git
