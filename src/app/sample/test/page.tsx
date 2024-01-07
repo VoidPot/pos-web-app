@@ -8,7 +8,7 @@ export default function Home() {
     <section className="flex min-h-screen flex-col justify-center align-middle items-center">
       <div className="max-w-lg">
         <h1 className="text-4xl md:text-6xl font-bold md:pb-4 pt-4 md:pt-0">
-          Elevate Your Social Hub with Soclif.com!
+          Elevate Your Social Hub with MealPot.app!
         </h1>
         <h3 className="md:text-3xl text-2xl font-bold">
           Showcase your links, content, and collaborations effortlessly on one

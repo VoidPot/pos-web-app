@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import BrandSloganStack from "@/next-shared/components/atoms/brand/brand-slogan-stack";
+import BrandStackSlogan from "@/next-shared/components/brand/stack-with-slogan";
 import { Anchor } from "@/next-shared/components/ui/anchor";
 
 export default function Home() {

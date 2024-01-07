@@ -1,5 +1,5 @@
-import BrandSideBySide from "@/next-shared/components/atoms/brand/side-by-side";
-import BrandStack from "@/next-shared/components/atoms/brand/brand-stack";
+import BrandSideBySide from "@/next-shared/components/brand/side-by-side";
+import BrandStack from "@/next-shared/components/brand/brand-stack";
 import { CreateAccount } from "@/next-shared/components/organisms/create-account-card";
 import { LoginForm } from "@/next-shared/components/organisms/login-form";
 import { ProfileForm } from "@/next-shared/components/organisms/profile-form";
@@ -10,7 +10,7 @@ import { Separator } from "@/next-shared/components/ui/separator";
 import { IoShareSocialSharp } from "react-icons/io5";
 import { PiHandshakeFill } from "react-icons/pi";
 import { RiSlideshow3Fill } from "react-icons/ri";
-import BrandSloganStack from "@/next-shared/components/atoms/brand/brand-slogan-stack";
+import BrandStackSlogan from "@/next-shared/components/brand/stack-with-slogan";
 
 export default function Home() {
   return (
@@ -62,8 +62,8 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col max-w-md gap-4 justify-center align-middle items-center">
-          <BrandSloganStack className="h-28 md:h-40" />
-          <h1 className="hidden">Soclif: Where Social Connections Thrive.</h1>
+          <BrandStackSlogan className="h-28 md:h-40" />
+          <h1 className="hidden">MealPot: Where Social Connections Thrive.</h1>
           <p className="hidden text-1xl w-10/12 text-muted-foreground text-center">
             Unify Your Social Presence, Forge Collaborations, Elevate Your
             Influence.

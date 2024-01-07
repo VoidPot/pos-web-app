@@ -1,6 +1,6 @@
 import { ThemeModeToggle } from "@/next-shared/components/organisms/theme-mode-toggle";
 import { Button } from "@/next-shared/components/ui/button";
-import BrandSloganStack from "@/next-shared/components/atoms/brand/brand-slogan-stack";
+import BrandStackSlogan from "@/next-shared/components/brand/stack-with-slogan";
 import { Input } from "@/next-shared/components/ui/input";
 import { Anchor } from "@/next-shared/components/ui/anchor";
 import { RegisterForm } from "@/next-shared/components/forms/register-form";
