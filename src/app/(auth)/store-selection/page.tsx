@@ -1,10 +1,11 @@
 import { Connection_Role } from "@/next-shared/__generated__/graphql";
-import AppLogin from "@/next-shared/components/pages/app-login";
+import StoreLogin from "@/next-shared/components/pages/store-login";
+import React from "react";
 
-export default function Home() {
+function Dashboard() {
   return (
-    <AppLogin
-      redirect="/store-selection"
+    <StoreLogin
+      redirect="/dashboard"
       roles={[
         Connection_Role.Admin,
         Connection_Role.Biller,
@@ -13,3 +14,5 @@ export default function Home() {
     />
   );
 }
+
+export default Dashboard;

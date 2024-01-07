@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/next-shared/components/theme-provider";
 
-import { GoogleOAuthProvider } from "@react-oauth/google";
 import "../next-shared/styles/globals.css";
 import { makeClient } from "@/next-shared/lib/apollo-provider";
 import { ApolloNextAppProvider } from "@apollo/experimental-nextjs-app-support/ssr";
@@ -21,21 +20,17 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body>
-        <GoogleOAuthProvider
-          clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || ""}
-        >
-          <ApolloNextAppProvider makeClient={makeClient}>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
-            >
-              {children}
-              <Toaster />
-            </ThemeProvider>
-          </ApolloNextAppProvider>
-        </GoogleOAuthProvider>
+        <ApolloNextAppProvider makeClient={makeClient}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+            <Toaster />
+          </ThemeProvider>
+        </ApolloNextAppProvider>
       </body>
     </html>
   );
