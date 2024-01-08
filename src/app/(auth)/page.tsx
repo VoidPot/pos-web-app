@@ -4,7 +4,7 @@ import AppLogin from "@/next-shared/components/pages/app-login";
 export default function Home() {
   return (
     <AppLogin
-      redirect="/store-selection"
+      redirect="/dashboard"
       roles={[
         Connection_Role.Admin,
         Connection_Role.Biller,
