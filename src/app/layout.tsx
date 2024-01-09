@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "@/next-shared/components/theme-provider";
-
-import "../next-shared/styles/globals.css";
-import { makeClient } from "@/next-shared/lib/apollo-provider";
 import { ApolloNextAppProvider } from "@apollo/experimental-nextjs-app-support/ssr";
-import { Toaster } from "@/next-shared/components/ui/toaster";
+
+import { ThemeProvider } from "@/providers/theme-provider";
+import { makeClient } from "@/providers/apollo-provider";
+import { Toaster } from "@/components/ui/toaster";
+import "../styles/globals.css";
 
 export const metadata: Metadata = {
   title: "MealPot",
