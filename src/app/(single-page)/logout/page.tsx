@@ -10,7 +10,7 @@ function Logout() {
   useEffect(() => {
     deleteCookie("token");
     router.push("/");
-  }, []);
+  }, [router]);
 
   return (
     <div className="grow w-full my-10 flex flex-col justify-center align-middle items-center gap-8">
