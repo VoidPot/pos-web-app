@@ -14,7 +14,7 @@ import Link from "next/link";
 
 export function ToggleApps({ slug }: { slug: string }) {
   return (
-    <div className="w-full max-w-sm md:max-w-5xl flex gap-3 text-secondary-foreground flex-wrap justify-center align-middle select-none py-8 flex-col">
+    <div className="w-full max-w-sm md:max-w-5xl flex gap-3 text-secondary-foreground flex-wrap justify-center align-middle select-none flex-col">
       <div className="relative">
         <div className="absolute inset-0 flex items-center">
           <span className="w-full border-t" />
@@ -25,13 +25,13 @@ export function ToggleApps({ slug }: { slug: string }) {
           </span>
         </div>
       </div>
-      <div className="flex flex-row justify-center flex-wrap gap-4 md:gap-6 pt-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 justify-center flex-wrap gap-4 md:gap-6 pt-8">
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
               <Link legacyBehavior href={`/cap?slug=${slug}`}>
                 <Anchor variant="ghost" size={"auto"} className="flex flex-col">
-                  <TbDeviceIpadMinus className="h-8 w-8 md:h-16 md:w-16" />
+                  <TbDeviceIpadMinus className="h-16 w-16" />
                   <p className="text-lg font-extrabold ">Captain</p>
                 </Anchor>
               </Link>
@@ -44,9 +44,9 @@ export function ToggleApps({ slug }: { slug: string }) {
           </Tooltip>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Link legacyBehavior href={`/cap?slug=${slug}`}>
+              <Link legacyBehavior href={`/pos?slug=${slug}`}>
                 <Anchor variant="ghost" size={"auto"} className="flex flex-col">
-                  <FiPrinter className="h-8 w-8 md:h-16 md:w-16" />
+                  <FiPrinter className="h-16 w-16" />
                   <p className="text-lg font-extrabold ">POS</p>
                 </Anchor>
               </Link>
@@ -59,7 +59,7 @@ export function ToggleApps({ slug }: { slug: string }) {
             <TooltipTrigger asChild>
               <Link legacyBehavior href={`/kds?slug=${slug}`}>
                 <Anchor variant="ghost" size={"auto"} className="flex flex-col">
-                  <FaKitchenSet className="h-8 w-8 md:h-16 md:w-16" />
+                  <FaKitchenSet className="h-16 w-16" />
                   <p className="text-lg font-extrabold ">KDS</p>
                 </Anchor>
               </Link>
@@ -72,7 +72,7 @@ export function ToggleApps({ slug }: { slug: string }) {
             <TooltipTrigger asChild>
               <Link legacyBehavior href={`/pod?slug=${slug}`}>
                 <Anchor variant="ghost" size={"auto"} className="flex flex-col">
-                  <FaCartShopping className="h-8 w-8 md:h-16 md:w-16" />
+                  <FaCartShopping className="h-16 w-16" />
                   <p className="text-lg font-extrabold ">POD</p>
                 </Anchor>
               </Link>

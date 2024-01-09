@@ -28,6 +28,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { useState } from "react";
 
 const FormSchema = z.object({
   store: z.string({
@@ -42,11 +43,16 @@ type Store = {
 
 export function MyStoresForm({ stores }: { stores: Store[] }) {
   const router = useRouter();
+  const [disabled, setDisabled] = useState(false);
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
 
+  const { watch } = form;
+  const selected = watch("store");
+
   function onSubmit(input: z.infer<typeof FormSchema>) {
+    setDisabled(true);
     router.push(`/store?slug=${input?.store}`);
   }
 
@@ -66,7 +72,7 @@ export function MyStoresForm({ stores }: { stores: Store[] }) {
                       variant="outline"
                       role="combobox"
                       className={cn(
-                        "w-[200px] justify-between",
+                        "w-full justify-between",
                         !field.value && "text-muted-foreground"
                       )}
                     >
@@ -116,7 +122,13 @@ export function MyStoresForm({ stores }: { stores: Store[] }) {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button
+          type="submit"
+          width={"full"}
+          disabled={disabled || !Boolean(selected)}
+        >
+          Submit
+        </Button>
       </form>
     </Form>
   );
