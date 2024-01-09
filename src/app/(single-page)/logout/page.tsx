@@ -2,12 +2,15 @@
 
 import { useRouter } from "next/navigation";
 import { deleteCookie } from "cookies-next";
+import { useEffect } from "react";
 
 function Logout() {
   const router = useRouter();
 
-  deleteCookie("token");
-  router.push("/");
+  useEffect(() => {
+    deleteCookie("token");
+    router.push("/");
+  }, []);
 
   return (
     <div className="grow w-full my-10 flex flex-col justify-center align-middle items-center gap-8">
