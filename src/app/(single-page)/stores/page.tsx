@@ -33,7 +33,7 @@ export default function Stores() {
   }, [data?.stores, router]);
 
   if (loading || stores.length === 1) {
-    return <p>Processing....</p>;
+    return <p className="text-md">Processing....</p>;
   }
 
   return (
