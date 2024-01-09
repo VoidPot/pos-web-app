@@ -2,7 +2,7 @@ import { Connection_Role } from "@/next-shared/__generated__/graphql";
 import StoreLogin from "@/next-shared/components/pages/store-login";
 import React from "react";
 
-function Dashboard() {
+function Stores() {
   return (
     <StoreLogin
       roles={[
@@ -14,4 +14,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default Stores;
