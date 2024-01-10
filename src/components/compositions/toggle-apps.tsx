@@ -25,13 +25,13 @@ export function ToggleApps({ slug }: { slug: string }) {
           </span>
         </div>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 justify-center flex-wrap gap-4 md:gap-6 pt-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 justify-center align-middle items-center flex-wrap gap-4 md:gap-6 pt-2 max-w-sm md:max-w-2xl m-auto">
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
               <Link legacyBehavior href={`/cap?slug=${slug}`}>
                 <Anchor variant="ghost" size={"auto"} className="flex flex-col">
-                  <TbDeviceIpadMinus className="h-16 w-16" />
+                  <TbDeviceIpadMinus className="h-10 w-10 md:h-16 md:w-16" />
                   <p className="text-lg font-extrabold ">Captain</p>
                 </Anchor>
               </Link>
@@ -46,7 +46,7 @@ export function ToggleApps({ slug }: { slug: string }) {
             <TooltipTrigger asChild>
               <Link legacyBehavior href={`/pos?slug=${slug}`}>
                 <Anchor variant="ghost" size={"auto"} className="flex flex-col">
-                  <FiPrinter className="h-16 w-16" />
+                  <FiPrinter className="h-10 w-10 md:h-16 md:w-16" />
                   <p className="text-lg font-extrabold ">POS</p>
                 </Anchor>
               </Link>
@@ -59,7 +59,7 @@ export function ToggleApps({ slug }: { slug: string }) {
             <TooltipTrigger asChild>
               <Link legacyBehavior href={`/kds?slug=${slug}`}>
                 <Anchor variant="ghost" size={"auto"} className="flex flex-col">
-                  <FaKitchenSet className="h-16 w-16" />
+                  <FaKitchenSet className="h-10 w-10 md:h-16 md:w-16" />
                   <p className="text-lg font-extrabold ">KDS</p>
                 </Anchor>
               </Link>
@@ -72,7 +72,7 @@ export function ToggleApps({ slug }: { slug: string }) {
             <TooltipTrigger asChild>
               <Link legacyBehavior href={`/pod?slug=${slug}`}>
                 <Anchor variant="ghost" size={"auto"} className="flex flex-col">
-                  <FaCartShopping className="h-16 w-16" />
+                  <FaCartShopping className="h-10 w-10 md:h-16 md:w-16" />
                   <p className="text-lg font-extrabold ">POD</p>
                 </Anchor>
               </Link>

@@ -84,7 +84,7 @@ body {
   height: 100%;
 }
 
-.container-min-h-fill {
+.min-h-fill {
   min-height: 100dvh;
 }
 

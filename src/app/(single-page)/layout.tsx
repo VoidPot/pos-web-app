@@ -11,36 +11,31 @@ import BrandStackSlogan from "@/components/brand/stack-with-slogan";
 
 function StoresLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-col justify-between align-middle items-center container-min-h-fill px-4">
-      {/* <div className="h-16 w-full flex justify-between align-middle items-center top-0 left-0 right-0 bg-secondary px-4">
-        <div className="absolute left-0 right-0 h-16 flex justify-center align-middle items-center">
-      <h5>A Canteen</h5>
-    </div>
-      </div> */}
-
-      {/* <UserActionDropdown /> */}
-      <div className="absolute left-6 top-4 flex gap-2 rounded-xl justify-center align-middle items-center select-none">
-        <Avatar className="cursor-pointer select-none border-secondary-foreground border">
-          <AvatarImage src="https://github.com/shasdcn.png" alt="@shadcn" />
-          <AvatarFallback>CN</AvatarFallback>
-        </Avatar>
-        <div className="flex flex-col text-secondary-foreground justify-center align-middle items-start">
-          <p className="text-md">Mani Raja</p>
-          <span className="text-xs font-semibold">Admin</span>
+    <div className="flex flex-col justify-between align-middle items-center min-h-fill px-4 md:px-6">
+      <div className="flex justify-between w-full align-middle items-center py-2">
+        <div className="flex gap-2 rounded-xl justify-center align-middle items-center select-none">
+          <Avatar className="cursor-pointer select-none border-secondary-foreground border">
+            <AvatarImage src="https://github.com/shasdcn.png" alt="@shadcn" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+          <div className="flex flex-col text-secondary-foreground justify-center align-middle items-start">
+            <p className="text-md">Mani Raja</p>
+            <span className="text-xs font-semibold">Admin</span>
+          </div>
         </div>
-      </div>
+        <div className="h-auto hidden md:flex">
+          <BrandSideBySide className="h-8" />
+        </div>
 
-      <div className="absolute right-6 top-4 flex justify-center align-middle items-center gap-4">
-        <ThemeModeToggle />
-        <Link legacyBehavior href={"/logout"}>
-          <Anchor variant={"outline"}>Logout</Anchor>
-        </Link>
+        <div className="flex justify-center align-middle items-center gap-2">
+          <ThemeModeToggle />
+          <Link legacyBehavior href={"/logout"}>
+            <Anchor variant={"outline"}>Logout</Anchor>
+          </Link>
+        </div>
       </div>
 
       <div className="grow w-full my-10 flex flex-col justify-center align-middle items-center gap-8">
-        <div className="h-auto md:absolute top-5">
-          <BrandStackSlogan className="h-32" />
-        </div>
         {children}
       </div>
     </div>

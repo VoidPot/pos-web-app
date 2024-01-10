@@ -14,7 +14,7 @@ export default function AuthLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="container-min-h-fill flex flex-col py-10 px-4 gap-10 justify-center align-middle items-center">
+    <main className="min-h-fill flex flex-col py-10 px-4 gap-10 justify-center align-middle items-center">
       <div className="p-2 w-auto absolute top-0 right-0">
         <ThemeModeToggle />
       </div>
