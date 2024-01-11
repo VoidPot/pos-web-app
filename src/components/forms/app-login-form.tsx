@@ -1,8 +1,5 @@
 "use client";
 
-import { useMutation } from "@apollo/client";
-import { useRouter } from "next/navigation";
-import { setCookie } from "cookies-next";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
@@ -15,10 +12,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import schemas, { LoginSchemaValues } from "@/validation";
-import { LOGIN } from "@/gql/mutations";
-import useErrorHandler from "@/hooks/error-handler";
-import { Connection_Role } from "@/__generated__/graphql";
-// import { toast } from "../ui/use-toast";
 
 const defaultValues: Partial<LoginSchemaValues> = {};
 
@@ -27,32 +20,32 @@ type AppLoginFormProps = {
 };
 
 function AppLoginForm({ redirect }: AppLoginFormProps) {
-  const router = useRouter();
+  // const router = useRouter();
   const form = useForm<LoginSchemaValues>({
     resolver: zodResolver(schemas.login),
     defaultValues,
     mode: "onSubmit",
   });
-  const { setError } = form;
-  const [mutateFunction, { reset, loading }] = useMutation(LOGIN);
+  // const { setError } = form;
+  // const [mutateFunction, { reset, loading }] = useMutation(LOGIN);
 
-  const { onError } = useErrorHandler({
-    name: "login",
-    callback: () => {
-      reset();
-    },
-    setError,
-  });
+  // const { onError } = useErrorHandler({
+  //   name: "login",
+  //   callback: () => {
+  //     reset();
+  //   },
+  //   setError,
+  // });
 
   function onSubmit(variables: LoginSchemaValues) {
-    mutateFunction({
-      variables,
-      onCompleted: (data) => {
-        setCookie("token", data.login.payload?.token), {};
-        router.push(redirect);
-      },
-      onError,
-    });
+    // mutateFunction({
+    //   variables,
+    //   onCompleted: (data) => {
+    //     setCookie("token", data.login.payload?.token), {};
+    //     router.push(redirect);
+    //   },
+    //   onError,
+    // });
   }
 
   return (
@@ -93,7 +86,7 @@ function AppLoginForm({ redirect }: AppLoginFormProps) {
             </FormItem>
           )}
         />
-        <Button className="w-full mt-8" type="submit" disabled={loading}>
+        <Button className="w-full mt-8" type="submit">
           Next
         </Button>
       </form>
