@@ -15,23 +15,23 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-  staging-deployment:
-    name: Staging Deployment
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Connect SSH and Run Scripts
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
-          script: |
-            export NVM_DIR=~/.nvm
-            source ~/.nvm/nvm.sh
-            cd /root/projects/pos-web-app
-            git checkout .
-            git pull
-            npm run nvm:setup
-            npm ci
-            npm run build
+  # staging-deployment:
+  #   name: Staging Deployment
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Connect SSH and Run Scripts
+  #       uses: appleboy/ssh-action@v1.0.0
+  #       with:
+  #         host: ${{ secrets.HOST }}
+  #         username: ${{ secrets.USERNAME }}
+  #         key: ${{ secrets.KEY }}
+  #         script: |
+  #           export NVM_DIR=~/.nvm
+  #           source ~/.nvm/nvm.sh
+  #           cd /root/projects/pos-web-app
+  #           git checkout .
+  #           git pull
+  #           npm run nvm:setup
+  #           npm ci
+  #           npm run build
