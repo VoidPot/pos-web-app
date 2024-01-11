@@ -5,16 +5,13 @@ import { UserActionDropdown } from "@/components/compositions/user-actions-dropd
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { ThemeModeToggle } from "@/components/compositions/theme-mode-toggle";
-import { Anchor } from "@/components/ui/anchor";
-import Link from "next/link";
-import BrandStackSlogan from "@/components/brand/stack-with-slogan";
 
-function StoresLayout({ children }: { children: React.ReactNode }) {
+function SlugLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-col justify-between align-middle items-center min-h-fill px-4 md:px-6">
-      <div className="flex justify-between w-full align-middle items-center py-2">
-        <div className="flex gap-2 rounded-xl justify-center align-middle items-center select-none">
-          <Avatar className="cursor-pointer select-none border-secondary-foreground border">
+    <div className="flex flex-col justify-between align-middle items-center min-h-fill px-6">
+      <div className="p-6 grid grid-cols-1 justify-center gap-4">
+        <div className="flex gap-2 justify-center align-middle items-center border border-secondary rounded-lg shadow-sm py-4 px-2">
+          <Avatar className="cursor-pointer select-none bg-secondary">
             <AvatarImage src="https://github.com/shasdcn.png" alt="@shadcn" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
@@ -23,21 +20,19 @@ function StoresLayout({ children }: { children: React.ReactNode }) {
             <span className="text-xs font-semibold">Admin</span>
           </div>
         </div>
-        <div className="h-auto hidden md:flex">
-          <BrandSideBySide className="h-8" />
-        </div>
-
-        <div className="flex justify-center align-middle items-center gap-2">
+        <div className="grid grid-cols-2 gap-4 justify-center">
           <ThemeModeToggle />
           <Button variant={"outline"}>Logout</Button>
         </div>
       </div>
 
-      <div className="grow w-full my-10 flex flex-col justify-center align-middle items-center gap-8">
+      <div className="grow w-full my-6 flex flex-col justify-center align-middle items-center gap-4">
+        <BrandSideBySide className="h-10 mb-10" />
+        <div></div>
         {children}
       </div>
     </div>
   );
 }
 
-export default StoresLayout;
+export default SlugLayout;

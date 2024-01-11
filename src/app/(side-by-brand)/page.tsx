@@ -2,7 +2,6 @@ import Link from "next/link";
 
 import { Anchor } from "@/components/ui/anchor";
 import AppLoginForm from "@/components/forms/app-login-form";
-import { Connection_Role } from "@/__generated__/graphql";
 
 export default function Home() {
   return (
