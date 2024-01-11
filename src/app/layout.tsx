@@ -4,7 +4,7 @@ import { ApolloNextAppProvider } from "@apollo/experimental-nextjs-app-support/s
 import { ThemeProvider } from "@/providers/theme-provider";
 import { makeClient } from "@/providers/apollo-provider";
 import { Toaster } from "@/components/ui/toaster";
-import "../styles/globals.css";
+import "../styles/globals.scss";
 
 export const metadata: Metadata = {
   title: "MealPot",
