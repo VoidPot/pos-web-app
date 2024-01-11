@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "postgresql" // mongodb
-  url      = env("DATABASE_URL")
+  url      = env("DATABASE_PRISMA_URL")
 }
 
 enum ACCOUNT_TYPE {

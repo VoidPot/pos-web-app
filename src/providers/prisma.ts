@@ -25,6 +25,6 @@ prisma.$on("query", (e) => {
   console.log("Duration: " + e.duration + "ms");
 });
 
-globalThis.prisma = prisma;
+// globalThis.prisma = prisma;
 
 export default prisma;
