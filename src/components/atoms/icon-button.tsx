@@ -1,16 +1,11 @@
+"use client";
+
 import { FiPrinter } from "react-icons/fi";
 import { FaKitchenSet } from "react-icons/fa6";
 import { FaCartShopping } from "react-icons/fa6";
 import { TbDeviceIpadMinus } from "react-icons/tb";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "../ui/tooltip";
-import { Anchor } from "../ui/anchor";
-import Link from "next/link";
 import { Button } from "../ui/button";
+import { useRouter } from "next/navigation";
 
 const IconList = {
   FiPrinter,
@@ -24,6 +19,7 @@ interface IconButtonProps
   label: string;
   iconClass?: string;
   icon: keyof typeof IconList;
+  redirectPath?: string;
 }
 
 export function IconButton({
@@ -31,15 +27,29 @@ export function IconButton({
   icon,
   iconClass,
   children,
+  redirectPath,
+  onClick,
   ...props
 }: IconButtonProps) {
+  const router = useRouter();
   const IconComp = IconList[icon];
+
+  const onClickHandler = (event: any) => {
+    console.log({ event, redirectPath });
+    if (onClick) {
+      onClick(event);
+    }
+    if (redirectPath) {
+      router.push(redirectPath);
+    }
+  };
 
   return (
     <Button
       variant="secondary"
       size={"auto"}
       className="flex flex-col p-4"
+      onClick={onClickHandler}
       {...props}
     >
       {children}

@@ -1,7 +1,5 @@
-import Link from "next/link";
-
-import { Anchor } from "@/components/ui/anchor";
 import AppLoginForm from "@/components/forms/app-login-form";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -16,9 +14,7 @@ export default function Home() {
       <div className="flex flex-col w-full gap-3 md:max-w-xs">
         <h6 className="text-xl font-sans">Need it for your store?</h6>
 
-        <Link href={"#"} legacyBehavior>
-          <Anchor variant={"outline"}>Create Account</Anchor>
-        </Link>
+        <Button variant={"outline"}>Create Account</Button>
       </div>
     </>
   );

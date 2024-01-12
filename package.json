@@ -19,7 +19,7 @@
     "db:seed": "prisma db seed",
     "db:setup": "npm run db:generate && npm run db:deploy",
     "db:studio": "npx prisma studio",
-    "generate": "npm run db:generate && npm run types:generate",
+    "generate": "npm run db:generate",
     "generate:env": "npm run ssh:generate && npm run secret:generate",
     "ssh:generate": "node ./scripts/generate-rsa-keys.js",
     "secret:generate": "node ./scripts/generate-secret.js"
