@@ -67,6 +67,7 @@
     "prisma": "^5.8.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-full-screen": "^1.1.1",
     "react-hook-form": "^7.49.2",
     "react-icons": "^4.12.0",
     "tailwind-merge": "^2.0.0",
