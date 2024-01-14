@@ -1,32 +1,54 @@
 "use server";
 
-export async function login() {
-  //   console.log({ data });
-  //   const response = await account.getAuthData(username);
-  //   if (response && response.id) {
-  //     if (response.password && response.salt) {
-  //       const validatePassword = verifyPasswordHash(
-  //         password,
-  //         response.password,
-  //         response.salt
-  //       );
+import { verifyPasswordHash } from "@/helpers/hash";
+import { encodeJWT } from "@/helpers/jwt";
+import { getAuthData } from "@/services/account";
 
-  //       if (validatePassword) {
-  //         const token = encodeJWT({
-  //           id: response.id,
-  //         });
+export async function login({
+  username,
+  password,
+}: {
+  username: string;
+  password: string;
+}) {
+  const response = await getAuthData(username);
+  if (response && response.id) {
+    if (response.password && response.salt) {
+      const validatePassword = verifyPasswordHash(
+        password,
+        response.password,
+        response.salt
+      );
 
-  //         return {
-  //           payload: { token },
-  //         };
-  //       }
+      if (validatePassword) {
+        const token = encodeJWT({
+          id: response.id,
+        });
 
-  //       throw GQLError("INCORRECT_PASSWORD", "ENTITY_NOT_FOUND");
-  //     }
+        return {
+          status: "success",
+          message: null,
+          data: { token },
+        };
+      }
 
-  //     throw GQLError("NO_PASSWORD_ADDED", "ENTITY_NOT_FOUND");
-  //   }
+      return {
+        status: "error",
+        message: "INCORRECT_PASSWORD",
+        data: null,
+      };
+    }
 
-  //   throw GQLError("USER_NOT_FOUND", "ENTITY_NOT_FOUND");
-  return {};
+    return {
+      status: "error",
+      message: "NO_PASSWORD_ADDED",
+      data: null,
+    };
+  }
+
+  return {
+    status: "error",
+    message: "USER_NOT_FOUND",
+    data: null,
+  };
 }

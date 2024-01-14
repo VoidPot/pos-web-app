@@ -4,19 +4,23 @@ import { useRouter } from "next/navigation";
 import { deleteCookie } from "cookies-next";
 import { UseFormSetError } from "react-hook-form";
 
-const extractGQLError = (error: any) => {
-  if (error.name === "ApolloError") {
-    const gqlError = error?.graphQLErrors[0] || {};
-    return {
-      message: (error.message || "") as unknown as ErrorType,
-      code: gqlError?.extensions.code || "",
-      name: error.name || "",
-      query: (gqlError.path?.length
-        ? gqlError.path[0].toString()
-        : "") as ErrorGroup,
-    };
-  }
-  return {};
+// const extractGQLError = (error: any) => {
+//   if (error.name === "ApolloError") {
+//     const gqlError = error?.graphQLErrors[0] || {};
+//     return {
+//       message: (error.message || "") as unknown as ErrorType,
+//       code: gqlError?.extensions.code || "",
+//       name: error.name || "",
+//       query: (gqlError.path?.length
+//         ? gqlError.path[0].toString()
+//         : "") as ErrorGroup,
+//     };
+//   }
+//   return {};
+// };
+
+const extractServerError = (error: any) => {
+  return error;
 };
 
 const extractErrorMessage = (
@@ -56,10 +60,10 @@ const useErrorHandler = ({
     if (callback) {
       callback();
     }
-    const { query, message } = extractGQLError(error);
-    const messageData = extractErrorMessage(query || name, message);
+    const { message } = extractServerError(error);
+    const messageData = extractErrorMessage(name, message);
 
-    console.log({ error, messageData, query, name, message });
+    console.log({ error, messageData, name, message });
 
     if (!messageData || !messageData.action || messageData.action === "toast") {
       toast({

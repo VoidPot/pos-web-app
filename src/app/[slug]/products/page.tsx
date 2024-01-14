@@ -38,7 +38,7 @@ export default async function Products() {
           ))}
         </div>
       </Container>
-      <p>Products</p>
+      <Container></Container>
     </Container>
   );
 }

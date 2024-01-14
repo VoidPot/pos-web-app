@@ -1,6 +1,8 @@
-import prisma from "../providers/prisma.js";
+"use server";
 
-async function getAuthData(username: string) {
+import prisma from "@/providers/prisma";
+
+export async function getAuthData(username: string) {
   const response = await prisma.account.findUnique({
     where: {
       username_type: {
@@ -19,7 +21,7 @@ async function getAuthData(username: string) {
   return response;
 }
 
-async function getContextData(id: number) {
+export async function getContextData(id: number) {
   const response = await prisma.account.findUnique({
     where: {
       id,
