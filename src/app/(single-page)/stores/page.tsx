@@ -5,9 +5,9 @@ import { getStores } from "@/services/store";
 async function getData() {
   const stores = await getStores();
 
-  if (stores.length === 1) {
-    redirect(`/${stores[0].slug}`);
-  }
+  // if (stores.length === 1) {
+  //   redirect(`/${stores[0].slug}`);
+  // }
 
   const storesData = stores.map((e) => ({
     label: e?.name || "",

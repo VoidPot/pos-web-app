@@ -2,23 +2,21 @@
 
 import prisma from "@/providers/prisma";
 
-export async function getProducts() {
-  const response = await prisma.product.findMany();
+export async function getCategories() {
+  const response = await prisma.category.findMany();
   return response;
 }
 
-export async function createProduct({
+export async function createCategory({
   name,
   deck,
   slug,
-  categoryId,
 }: {
   name: string;
   deck: string;
   slug: string;
-  categoryId: number;
 }) {
-  const response = await prisma.product.create({
+  const response = await prisma.category.create({
     data: {
       name,
       deck,
@@ -27,31 +25,24 @@ export async function createProduct({
           slug,
         },
       },
-      category: {
-        connect: {
-          id: categoryId,
-        },
-      },
     },
   });
 
   return response;
 }
 
-export async function updateProduct({
+export async function updateCategory({
   name,
   deck,
   slug,
   id,
-  categoryId,
 }: {
   name: string;
   deck: string;
   slug: string;
   id: number;
-  categoryId: number;
 }) {
-  const response = await prisma.product.update({
+  const response = await prisma.category.update({
     where: {
       id,
       store: {
@@ -61,7 +52,6 @@ export async function updateProduct({
     data: {
       name,
       deck,
-      categoryId,
     },
   });
 

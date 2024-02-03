@@ -40,15 +40,9 @@ export default async function Store({ params }: { params: { slug: string } }) {
       </div>
 
       <div className="grow w-full my-6 flex flex-col justify-center align-middle items-center gap-4">
-        <BrandSideBySide className="h-10 mb-10" />
-        <div></div>
-
+        <BrandSideBySide className="h-10 mb-10 m-auto" />
         <Card className="w-full max-w-2xl">
           <CardHeader>
-            {/* <Avatar className="cursor-pointer select-none w-16 h-16 text-3xl">
-          <AvatarImage src={store.} alt="@shadcn" />
-          <AvatarFallback>{store.name.slice(0, 1)}</AvatarFallback>
-        </Avatar> */}
             <CardTitle>{store.name}</CardTitle>
             <CardDescription>
               {store.addresses.line1} {store.addresses.line2}{" "}

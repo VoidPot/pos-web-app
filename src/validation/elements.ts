@@ -1,6 +1,15 @@
 import * as z from "zod";
 import messages from "./messages";
 
+export const number = () => {
+  let numberSchema = z.number({
+    required_error: messages.required,
+    invalid_type_error: messages.valid_email,
+  });
+
+  return numberSchema;
+};
+
 export const string = (options?: {
   type?: "email" | "username";
   length?: "4-20" | "6-20";
